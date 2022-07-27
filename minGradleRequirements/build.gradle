@@ -5,8 +5,10 @@ sdf.setTimeZone(TimeZone.getTimeZone("CET"))
 
 println "Hello World now: " + sdf.format(new Date())
 
+sayHelloWorld()
+
 void sayHelloWorld() {
 	println "Hello World!"
 }
 
-sayHelloWorld()
+
