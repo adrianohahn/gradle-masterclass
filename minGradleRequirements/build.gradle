@@ -14,6 +14,7 @@ void sayHelloWorld() {
 int doubleIt(int i) {
 	println i
 	i * 3
+	def y = i
 }
 
 println doubleIt(2)
