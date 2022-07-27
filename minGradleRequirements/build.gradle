@@ -3,4 +3,4 @@ import java.text.*
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
 sdf.setTimeZone(TimeZone.getTimeZone("CET"))
 
-System.out.println "Hello World now: " + sdf.format(new Date())
+println "Hello World now: " + sdf.format(new Date())
