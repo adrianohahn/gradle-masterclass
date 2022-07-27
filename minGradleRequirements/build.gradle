@@ -11,4 +11,11 @@ void sayHelloWorld() {
 	println "Hello World!"
 }
 
+int doubleIt(int i) {
+	println i
+	i * 3
+}
+
+println doubleIt(2)
+
 
