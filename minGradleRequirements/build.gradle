@@ -67,8 +67,8 @@ println m.baz
 
 // Closures
 
-def echoIt = { String parameter ->
-    println parameter
+def echoIt = { 
+    println it
 }
 
 echoIt("Hello World")
