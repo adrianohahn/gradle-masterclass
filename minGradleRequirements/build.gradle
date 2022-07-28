@@ -1,5 +1,162 @@
-defaultTasks 'hello'
+import java.text.*
 
-task ('hello').doLast{
-	println "Hello World"
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'")
+sdf.setTimeZone(TimeZone.getTimeZone("CET"))
+
+println "Hello World now: " + sdf.format(new Date())
+
+sayHelloWorld()
+
+void sayHelloWorld() {
+	println "Hello World!"
 }
+
+int doubleIt(int i) {
+	println i
+	i * 3
+	def y = i
+}
+
+println doubleIt(2)
+
+def s1 = "a string"
+println s1
+def s2 = 'a string'
+println s2
+def s3 = """ A
+    string
+    on
+    multiple
+    lines 
+"""
+println s3
+
+def x = 4
+println "x is $x"
+
+def myCourse = "Gradle"
+println "I am training in: ${myCourse.toUpperCase()}"
+
+/*
+
+class Person {
+    String name
+    Integer age
+
+    Person(name, age) {
+        this.name = name
+        this.age = age
+    }
+}
+
+def p1 = new Person("Fred", 35)
+println p1.age
+
+p1.age = 36
+println p1.age
+
+*/
+
+Map m = new HashMap()
+m.put("foo", "Fred")
+println m.get("foo")
+
+m.foo = "Bill"
+m.bar = "Jane"
+m.baz = "Dave"
+
+println m.foo
+println m.bar
+println m.baz
+
+// Closures
+
+def echoIt = { a, b, c ->
+    println a
+    println b
+    println c
+    4
+}
+
+println echoIt("Hello World", "How are you?", "Today?")
+
+def oneArgMethod(closure) {
+    closure() * 2
+}
+
+println oneArgMethod {10}
+
+def twoArgMethod(factor, closure) {
+    factor * closure()
+}
+
+println twoArgMethod(3, {10})
+
+def i = oneArgMethod {
+	def y = 3
+	y * 2
+}
+
+assert i == 12
+
+for (int j in [1,2,3]) {
+	println j
+}
+
+[1,2,3].each {
+	println it
+}
+
+/*
+class Person {
+
+	String name = "Fred"
+	
+	Closure nameSayer = {
+		println name
+	}
+	
+}
+
+def p1 = new Person()
+p1.nameSayer()
+
+*/
+
+/*
+def theName = "John"
+
+def sayName = {
+	println theName
+}
+
+sayName()
+
+theName = "Bill"
+
+sayName()
+*/
+
+
+class Person {
+
+    String theName
+    Integer theAge
+
+    Person(theName, theAge) {
+        this.theName = theName
+        this.theAge = theAge
+    }
+    
+    def executeInside(Closure c) {
+    	c.delegate = this
+    	c()
+    }
+    
+}
+
+def p1 = new Person("Fred", 35)
+
+println p1.theName
+
+p1.executeInside { println theName }
