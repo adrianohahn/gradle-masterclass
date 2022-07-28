@@ -67,8 +67,10 @@ println m.baz
 
 // Closures
 
-def echoIt = { 
-    println it
+def echoIt = { a, b, c ->
+    println a
+    println b
+    println c
 }
 
-echoIt("Hello World")
+echoIt("Hello World", "How are you?", "Today?")
