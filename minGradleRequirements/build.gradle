@@ -37,4 +37,30 @@ println "x is $x"
 def myCourse = "Gradle"
 println "I am training in: ${myCourse.toUpperCase()}"
 
+class Person {
+    String name
+    Integer age
 
+    Person(name, age) {
+        this.name = name
+        this.age = age
+    }
+}
+
+def p1 = new Person("Fred", 35)
+println p1.age
+
+p1.age = 36
+println p1.age
+
+Map m = new HashMap()
+m.put("foo", "Fred")
+println m.get("foo")
+
+m.foo = "Bill"
+m.bar = "Jane"
+m.baz = "Dave"
+
+println m.foo
+println m.bar
+println m.baz
