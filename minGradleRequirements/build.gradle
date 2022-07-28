@@ -65,8 +65,10 @@ println m.foo
 println m.bar
 println m.baz
 
-def echoIt = {
-    println "Hello World"
+// Closures
+
+def echoIt = { String parameter ->
+    println parameter
 }
 
-println echoIt()
+echoIt("Hello World")
