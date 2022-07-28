@@ -75,3 +75,30 @@ def echoIt = { a, b, c ->
 }
 
 println echoIt("Hello World", "How are you?", "Today?")
+
+def oneArgMethod(closure) {
+    closure() * 2
+}
+
+println oneArgMethod {10}
+
+def twoArgMethod(factor, closure) {
+    factor * closure()
+}
+
+println twoArgMethod(3, {10})
+
+def i = oneArgMethod {
+	def y = 3
+	y * 2
+}
+
+assert i == 12
+
+for (int j in [1,2,3]) {
+	println j
+}
+
+[1,2,3].each {
+	println it
+}
