@@ -71,6 +71,7 @@ def echoIt = { a, b, c ->
     println a
     println b
     println c
+    4
 }
 
-echoIt("Hello World", "How are you?", "Today?")
+println echoIt("Hello World", "How are you?", "Today?")
