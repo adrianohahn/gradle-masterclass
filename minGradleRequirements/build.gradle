@@ -37,6 +37,8 @@ println "x is $x"
 def myCourse = "Gradle"
 println "I am training in: ${myCourse.toUpperCase()}"
 
+/*
+
 class Person {
     String name
     Integer age
@@ -52,6 +54,8 @@ println p1.age
 
 p1.age = 36
 println p1.age
+
+*/
 
 Map m = new HashMap()
 m.put("foo", "Fred")
@@ -102,3 +106,29 @@ for (int j in [1,2,3]) {
 [1,2,3].each {
 	println it
 }
+
+class Person {
+
+	String name = "Fred"
+	
+	Closure nameSayer = {
+		println name
+	}
+	
+}
+
+def p1 = new Person()
+p1.nameSayer()
+
+def theName = "John"
+
+def sayName = {
+	println theName
+}
+
+sayName()
+
+theName = "Bill"
+
+sayName()
+
