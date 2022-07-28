@@ -64,3 +64,9 @@ m.baz = "Dave"
 println m.foo
 println m.bar
 println m.baz
+
+def echoIt = {
+    println "Hello World"
+}
+
+println echoIt()
